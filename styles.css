@@ -1,0 +1,612 @@
+:root {
+  --rojo-potente: #B2182B;
+  --rojo-potente-hover: #9c1b25;
+  --plomo: #4F4F4F;
+  --blanco: #ffffff;
+  --gris-oscuro: #333333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--plomo);
+  color: var(--blanco);
+}
+
+header {
+  background-color: var(--rojo-potente);
+  padding: 1rem;
+  color: var(--blanco);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+.titulo {
+  flex: 1 1 40%;
+}
+
+.titulo h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--blanco); /* Color original del título */
+  text-shadow: 3px 3px 0 var(--plomo); /* Puede interferir con el cambio de color */
+  margin: 0;
+  padding-left: 3rem;
+  line-height: 1.1;
+}
+
+.titulo a {
+  text-decoration: none; /* Eliminar el subrayado del enlace */
+  color: inherit; /* Hereda el color del h1 */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave para el cambio de color y sombra */
+}
+
+.titulo a:hover {
+  color: #e63946; /* Cambia el color del enlace cuando se pasa el cursor */
+  text-shadow: 3px 3px 0 #e63946; /* Cambia el color de la sombra del texto en el hover */
+}
+
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--blanco);
+  text-shadow: 2px 2px 0 var(--gris-oscuro);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.navegacion {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.menu-busqueda {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+nav li {
+  position: relative;
+}
+
+nav li a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+nav li a:hover {
+  transform: scale(1.1);
+  color: var(--rojo-potente-hover);
+}
+
+.buscador {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buscador input {
+  width: 100%; /* Asegura que el input ocupe el 100% del contenedor */
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-oscuro);
+  color: var(--gris-oscuro);
+  width: 250px;
+  box-sizing: border-box;
+}
+
+.buscador input:focus {
+  outline: none;
+  border-color: var(--rojo-potente);
+  box-shadow: 0 0 5px var(--rojo-potente);
+}
+
+.buscador button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background-color: var(--rojo-potente);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background-color: var(--rojo-potente-hover);
+}
+
+nav a {
+  color: var(--amarillo);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  color: #ffb300;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--blanco);
+  transition: width 0.3s ease;
+  width: 0;
+  margin-top: 4px;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+main {
+  padding: 2rem;
+}
+
+/* Estilo para la sección de introducción */
+.intro {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+  color: var(--blanco);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Importante para que el fondo semitransparente no se sobreponga */
+  z-index: 10; /* Asegura que el texto esté encima del fondo */
+}
+
+/* Estilo para los encabezados dentro de la intro */
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* Estilo para el texto dentro de la intro */
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo del botón en la intro */
+.intro button {
+  padding: 0.75rem 2rem;
+  background-color: #e63946;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.intro button:hover {
+  background-color: #d62839;
+}
+
+/* Estilo de la sección de más información */
+.info-expandida.hidden {
+  display: none;
+}
+
+.info-expandida .info-contenido {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-expandida ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-expandida ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#info.info-expandida {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.info-contenido h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #b30000;
+  text-align: center;
+  border-bottom: 2px solid #e63946;
+  padding-bottom: 0.5rem;
+}
+
+.info-contenido ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  max-width: 100%; /* Evita que se salga del contenedor */
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el tamaño total */
+}
+.info-contenido li {
+  background-color: #6b3737;
+  padding: 1rem;
+  border-left: 5px solid #e63946;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden; /* Evita el desbordamiento */
+}
+
+
+button {
+  background-color: var(--rojo-potente);
+  color: var(--blanco);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--rojo-potente-hover);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil */
+}
+
+button:focus, a:focus {
+  outline: 3px solid red; /* Resaltar el botón o enlace al enfocarlo */
+}
+
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--plomo);
+  color: var(--blanco);
+  font-size: 0.9rem;
+}
+
+.galeria {
+  background: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente */
+  backdrop-filter: blur(6px); /* Desenfoque detrás */
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 por fila */
+  gap: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.imagen-martillo {
+  background: rgba(255, 255, 255, 0.1); /* blanco semi-transparente */
+  backdrop-filter: blur(6px); /* difumina el fondo detrás */
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.imagen-martillo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imagen-martillo:hover img {
+  transform: scale(1.1); /* Aumenta ligeramente la imagen */
+}
+
+.agrandar {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background-color: var(--rojo-potente);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--blanco);
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s ease;
+}
+
+.imagen-martillo:hover .agrandar {
+  display: block;
+}
+
+.agrandar:hover {
+  background-color: #9c1b25; /* Un tono más oscuro de rojo */
+}
+
+.card, .modal {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para que los elementos resalten */
+  border-radius: 10px; /* Bordes redondeados para un diseño más moderno */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  
+}
+
+.modal-content {
+  background-color: var(--plomo);
+  color: var(--blanco);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 80%;
+  gap: 2rem;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 350px;
+  max-height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.modal img {
+  max-width: 85%;  /* Aumenta el tamaño de la imagen */
+  max-height: 65vh; /* Ajusta la altura para que la imagen no sea demasiado grande */
+  border-radius: 10px;
+  margin-bottom: 1rem; /* Espaciado debajo de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para darle más enfoque a la imagen */
+  object-fit: contain; /* Hace que la imagen se ajuste dentro de su contenedor sin distorsionarse */
+  margin-left: 10%; /* Desplaza la imagen un poco a la derecha para centrarla, pero no completamente */
+}
+
+.modal .info {
+  color: #fff;
+  margin-top: 1rem;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro y translúcido */
+  padding: 2rem;  /* Añadimos más relleno para que el texto no se pegue a los bordes */
+  border-radius: 10px;
+  width: 75%; /* Limitar el ancho del texto */
+  margin-top: 1rem; /* Separar del contenido */
+  font-size: 1.2rem; /* Aumentar el tamaño del texto */
+}
+
+.modal .info h3 {
+  font-size: 2rem; /* Aumenta el tamaño del título */
+  margin-bottom: 1rem; /* Separar del siguiente contenido */
+  color: var(--rojo-potente); /* Color de título bonito */
+}
+
+.modal .info p {
+  font-size: 1.2rem; /* Aumenta el tamaño del párrafo */
+  line-height: 1.8; /* Mejor legibilidad */
+  margin-bottom: 1.5rem; /* Separar párrafos */
+}
+
+.modal .info ul {
+  list-style-type: none; /* Quitar los puntos de la lista */
+  padding: 0;
+}
+
+.modal .info ul li {
+  font-size: 1.2rem; /* Aumentar el tamaño de las características */
+  margin-bottom: 0.5rem; /* Separar las características */
+  color: #fff;
+}
+
+.modal .info ul li strong {
+  color: #ffb300; /* Resaltar la etiqueta "Características" */
+}
+
+.info-img {
+  max-width: 400px;
+}
+
+.info-img h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--rojo-potente);
+}
+
+.info-img p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cerrar:hover {
+  background-color: #9c1b25; /* Un tono más oscuro de rojo */
+}
+
+.seccion-contacto {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto {
+  flex: 1 1 550px;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-contacto label {
+  font-weight: 600;
+  color: #444;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #e63946;
+  outline: none;
+}
+
+.formulario-contacto button {
+  padding: 0.75rem;
+  background-color: #e63946;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #d62839;
+  transform: translateY(-2px);
+}
+
+/* REDES */
+.redes-contacto {
+  flex: 1 1 300px;
+  background-color: rgba(230, 57, 70, 0.06);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
+}
+
+.redes-contacto h2 {
+  font-size: 1.6rem;
+  color: #e63946;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.redes-contacto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.redes-contacto li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.redes-contacto a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.redes-contacto a:hover {
+  background-color: #e63946;
+  color: white;
+  transform: translateX(5px);
+}
