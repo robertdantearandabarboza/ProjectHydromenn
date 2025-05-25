@@ -53,7 +53,6 @@ document.querySelectorAll('.agrandar').forEach(button => {
   });
 });
 
-
 const fondo = document.querySelector('.fondo-cambiante');
 const imagenes = [
   'img/img7.jpeg',
