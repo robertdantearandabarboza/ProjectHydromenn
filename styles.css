@@ -177,6 +177,33 @@ main {
   padding: 2rem;
 }
 
+.bienvenida {
+  height: 56vh; /* Pantalla completa */
+  display: flex;
+  align-items: flex-start;
+  padding-top: 6rem; /* Ajusta cuán arriba empieza */
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.mensaje-llamativo {
+  transform: translateY(-75px); /* Súbelo 60 píxeles */
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* sombra para que resalte sobre cualquier fondo */
+  transition: opacity 0.5s ease;
+  padding: 0 2rem; /* un poco de espacio lateral para pantallas pequeñas */
+}
+
+.mensaje-llamativo.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 /* Estilo para la sección de introducción */
 .intro {
   text-align: center;

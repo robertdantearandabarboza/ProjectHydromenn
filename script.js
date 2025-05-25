@@ -73,5 +73,14 @@ function cambiarFondo() {
 cambiarFondo(); // Mostrar la primera imagen al cargar
 setInterval(cambiarFondo, 5000); // Cambia cada 5 segundos
 
+const mensaje = document.querySelector('.mensaje-llamativo');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    mensaje.classList.add('oculto'); // Oculta al hacer scroll
+  } else {
+    mensaje.classList.remove('oculto'); // Muestra al volver arriba
+  }
+});
 
 
