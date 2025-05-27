@@ -1,0 +1,81 @@
+/* Estilo para pantallas grandes de escritorio (más de 1024px de ancho) */
+@media (min-width: 1025px) {
+  .navegacion ul {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .navegacion ul li {
+    margin: 0 20px;
+  }
+
+  .navegacion ul li a {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  /* Para la galería, ajustamos el tamaño de las imágenes */
+  .galeria img {
+    width: 30%; /* Tres imágenes por fila */
+    height: auto;
+    margin: 10px;
+  }
+
+  /* Ajustamos los botones de la galería */
+  .agrandar {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Estilo para tablets (pantallas de 768px a 1024px de ancho) */
+@media (max-width: 1024px) {
+  .navegacion ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navegacion ul li {
+    margin: 10px;
+  }
+
+  .navegacion ul li a {
+    font-size: 16px;
+  }
+
+  .galeria img {
+    width: 45%; /* Dos imágenes por fila */
+    height: auto;
+  }
+
+  .agrandar {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Estilo para móviles (pantallas de hasta 767px de ancho) */
+@media (max-width: 767px) {
+  /* Para el buscador en móviles */
+  .buscador input {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .buscador button {
+    padding: 10px;
+  }
+
+  /* Ajustar imágenes dentro de la galería */
+  .galeria img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ajuste de botones en móviles */
+  .agrandar {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

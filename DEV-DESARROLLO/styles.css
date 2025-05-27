@@ -14,32 +14,53 @@
 /* FONDO CAMBIANTE EN LA PANTALLA PRINCIPAL */
 /* ===================== */
 .fondo-cambiante {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Se coloca detrás del contenido */
   background-size: cover;
   background-position: center;
+  color: white;
+  padding: 400px 100px;
   transition: background-image 1s ease-in-out; /* Transición suave al cambiar imagen */
+  width: 100%;
+  height: 500px; /* Puedes ajustar esto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Elimina espacios por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ===================== */
 /* ESTILOS GENERALES DEL BODY */
 /* ===================== */
 body {
+  position: relative;
+  z-index: 10; /* Asegura que el header esté sobre el fondo */
+  padding: 0;
+  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--plomo);
+  background-color: var(--blanco);
   color: var(--blanco);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 /* ===================== */
 /* ENCABEZADO PRINCIPAL */
 /* ===================== */
 header {
+  margin-top: 0;
+  position: sticky;
+  top: 0;
   background-color: var(--rojo-potente);
-  padding: 1rem;
+  z-index: 1000; /* Para que esté por encima de otros elementos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* (opcional) Sombra al hacer scroll */
   color: var(--blanco);
 }
 
@@ -49,7 +70,7 @@ header {
   align-items: flex-start;
   max-width: 1200px;
   margin: auto;
-  padding: 2rem 1rem;
+  padding: 1.5rem 0; /* Menos espacio arriba y abajo */
   gap: 2rem;
 }
 
@@ -61,10 +82,10 @@ header {
 }
 
 .titulo h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   color: var(--blanco); /* Color original del título */
-  text-shadow: 3px 3px 0 var(--plomo); /* Puede interferir con el cambio de color */
+  text-shadow: 3px 3px 0 var(--amarillo); /* Puede interferir con el cambio de color */
   margin: 0;
   padding-left: 3rem;
   line-height: 1.1;
@@ -85,12 +106,11 @@ header {
 h1 {
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--blanco);
+  color: var(--gris-oscuro);
   text-shadow: 2px 2px 0 var(--gris-oscuro);
   letter-spacing: 1px;
   margin: 0;
 }
-
 
 /* NAVEGACIÓN */
 .navegacion {
@@ -127,7 +147,8 @@ nav li a {
   color: var(--blanco);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -146,10 +167,10 @@ nav li a:hover {
 
 .buscador input {
   width: 100%; /* Asegura que el input ocupe el 100% del contenedor */
-  padding: 0.75rem 1rem;
+  padding: 0.3rem 0.5rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.85rem;
   background-color: var(--blanco);
   border: 1px solid var(--gris-oscuro);
   color: var(--gris-oscuro);
@@ -179,7 +200,7 @@ nav li a:hover {
 
 /* Estilo adicional de enlaces dentro de la nav */
 nav a {
-  color: var(--amarillo);
+  color: var(--blanco);
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -211,7 +232,7 @@ nav a:hover::after {
 /* SECCIÓN PRINCIPAL (MAIN) */
 /* ===================== */
 main {
-  padding: 2rem;
+  padding-top: 100px;
 }
 
 /* ===================== */
@@ -230,7 +251,7 @@ main {
 }
 
 .mensaje-llamativo {
-  transform: translateY(-75px); /* Súbelo 60 píxeles */
+  transform: translateY(-255px); /* Súbelo 60 píxeles */
   font-size: 2.5rem;
   font-weight: 900;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* sombra para que resalte sobre cualquier fondo */
@@ -249,7 +270,7 @@ main {
 .intro {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
-  color: var(--blanco);
+  color: var(--gris-oscuro);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -283,7 +304,7 @@ main {
 }
 
 .intro button:hover {
-  background-color: #d62839;
+  background-color: var(--rojo-potente);
 }
 
 /* ===================== */
@@ -416,6 +437,7 @@ button:focus, a:focus {
   transform: scale(1.1); /* Aumenta ligeramente la imagen */
 }
 
+/* AGRANDAR MODAL*/
 .agrandar {
   position: absolute;
   bottom: 10px;
@@ -550,7 +572,7 @@ button:focus, a:focus {
   line-height: 1.6;
 }
 
-
+/*CERRAR MODAL*/
 .cerrar {
   position: absolute;
   top: 10px;
@@ -700,51 +722,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===================== */
-/* RESPONSIVE (AJUSTES PARA PANTALLAS PEQUEÑAS) */
-/* ===================== */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .titulo h1 {
-    font-size: 2.5rem;
-    padding-left: 0;
-  }
-
-  .navegacion {
-    align-items: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mensaje-llamativo {
-    font-size: 1.8rem;
-  }
-
-  .buscador {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-
-  .buscador input {
-    width: 100%;
-  }
-
-  .galeria {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .imagen-martillo {
-    width: 90%;
-    height: auto;
-  }
+main, .intro, .galeria, .seccion-contacto, #info {
+  background-color: white;
 }
