@@ -1,17 +1,42 @@
+/* ===================== */
+/* VARIABLES DE COLOR GLOBALES */
+/* ===================== */
 :root {
   --rojo-potente: #B2182B;
   --rojo-potente-hover: #9c1b25;
   --plomo: #4F4F4F;
   --blanco: #ffffff;
   --gris-oscuro: #333333;
+  --amarillo: #ffb300;
 }
 
+/* ===================== */
+/* FONDO CAMBIANTE EN LA PANTALLA PRINCIPAL */
+/* ===================== */
+.fondo-cambiante {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Se coloca detrás del contenido */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out; /* Transición suave al cambiar imagen */
+}
+
+/* ===================== */
+/* ESTILOS GENERALES DEL BODY */
+/* ===================== */
 body {
   font-family: Arial, sans-serif;
   background-color: var(--plomo);
   color: var(--blanco);
 }
 
+/* ===================== */
+/* ENCABEZADO PRINCIPAL */
+/* ===================== */
 header {
   background-color: var(--rojo-potente);
   padding: 1rem;
@@ -28,6 +53,9 @@ header {
   gap: 2rem;
 }
 
+/* ===================== */
+/* TÍTULO DE LA PÁGINA */
+/* ===================== */
 .titulo {
   flex: 1 1 40%;
 }
@@ -53,7 +81,7 @@ header {
   text-shadow: 3px 3px 0 #e63946; /* Cambia el color de la sombra del texto en el hover */
 }
 
-
+/* ESTILO GENERAL H1 FUERA DEL TÍTULO */
 h1 {
   font-size: 2.5rem;
   font-weight: 900;
@@ -63,6 +91,8 @@ h1 {
   margin: 0;
 }
 
+
+/* NAVEGACIÓN */
 .navegacion {
   flex: 1 1 60%;
   display: flex;
@@ -71,6 +101,7 @@ h1 {
   gap: 1rem;
 }
 
+/* Contenedor para menú + barra de búsqueda */
 .menu-busqueda {
   flex: 1 1 45%;
   display: flex;
@@ -105,6 +136,9 @@ nav li a:hover {
   color: var(--rojo-potente-hover);
 }
 
+/* ===================== */
+/* BARRA DE BÚSQUEDA */
+/* ===================== */
 .buscador {
   display: flex;
   gap: 0.5rem;
@@ -143,6 +177,7 @@ nav li a:hover {
   background-color: var(--rojo-potente-hover);
 }
 
+/* Estilo adicional de enlaces dentro de la nav */
 nav a {
   color: var(--amarillo);
   text-decoration: none;
@@ -172,11 +207,16 @@ nav a:hover::after {
   width: 100%;
 }
 
-
+/* ===================== */
+/* SECCIÓN PRINCIPAL (MAIN) */
+/* ===================== */
 main {
   padding: 2rem;
 }
 
+/* ===================== */
+/* MENSAJE DE BIENVENIDA */
+/* ===================== */
 .bienvenida {
   height: 56vh; /* Pantalla completa */
   display: flex;
@@ -203,8 +243,9 @@ main {
   pointer-events: none;
 }
 
-
-/* Estilo para la sección de introducción */
+/* ===================== */
+/* SECCIÓN DE INTRODUCCIÓN */
+/* ===================== */
 .intro {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
@@ -245,7 +286,9 @@ main {
   background-color: #d62839;
 }
 
-/* Estilo de la sección de más información */
+/* ===================== */
+/* SECCIÓN EXPANDIBLE (leer más...) */
+/* ===================== */
 .info-expandida.hidden {
   display: none;
 }
@@ -308,6 +351,9 @@ main {
 }
 
 
+/* ===================== */
+/* BOTONES GENERALES */
+/* ===================== */
 button {
   background-color: var(--rojo-potente);
   color: var(--blanco);
@@ -332,14 +378,9 @@ button:focus, a:focus {
   display: none;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--plomo);
-  color: var(--blanco);
-  font-size: 0.9rem;
-}
-
+/* ===================== */
+/* GALERÍA DE IMÁGENES */
+/* ===================== */
 .galeria {
   background: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente */
   backdrop-filter: blur(6px); /* Desenfoque detrás */
@@ -404,7 +445,12 @@ footer {
   border-radius: 10px; /* Bordes redondeados para un diseño más moderno */
 }
 
+
+/* ===================== */
+/* MODAL (VENTANA EMERGENTE) */
+/* ===================== */
 .modal {
+  opacity: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -416,7 +462,8 @@ footer {
   align-items: center;
   z-index: 1000;
   padding: 1rem;
-  
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .modal-content {
@@ -521,6 +568,10 @@ footer {
   background-color: #9c1b25; /* Un tono más oscuro de rojo */
 }
 
+
+/* ===================== */
+/* SECCIÓN DE CONTACTO */
+/* ===================== */
 .seccion-contacto {
   display: flex;
   justify-content: space-between;
@@ -636,4 +687,64 @@ footer {
   background-color: #e63946;
   color: white;
   transform: translateX(5px);
+}
+
+/* ===================== */
+/* PIE DE PÁGINA (FOOTER) */
+/* ===================== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--plomo);
+  color: var(--blanco);
+  font-size: 0.9rem;
+}
+
+/* ===================== */
+/* RESPONSIVE (AJUSTES PARA PANTALLAS PEQUEÑAS) */
+/* ===================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titulo h1 {
+    font-size: 2.5rem;
+    padding-left: 0;
+  }
+
+  .navegacion {
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mensaje-llamativo {
+    font-size: 1.8rem;
+  }
+
+  .buscador {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .buscador input {
+    width: 100%;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagen-martillo {
+    width: 90%;
+    height: auto;
+  }
 }
